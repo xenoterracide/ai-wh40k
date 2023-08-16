@@ -1,6 +1,12 @@
 group = "com.xenoterracide"
 version = "0.1.0-SNAPSHOT"
 
+buildscript {
+  dependencyLocking {
+    lockAllConfigurations()
+  }
+}
+
 plugins {
   id("our.java-library")
   id("org.bytedeco.gradle-javacpp-platform").version("1.+")
