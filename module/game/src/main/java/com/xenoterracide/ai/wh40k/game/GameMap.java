@@ -17,7 +17,6 @@ limitations under the License.
 */
 package com.xenoterracide.ai.wh40k.game;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -28,7 +27,7 @@ import javax.measure.Unit;
 import javax.measure.quantity.Length;
 import tech.units.indriya.unit.Units;
 
-public class GameMap {
+public class GameMap implements Surface {
 
   private static final Unit<Length> MM = MetricPrefix.MILLI(Units.METRE);
   private final Surface table;
@@ -38,8 +37,8 @@ public class GameMap {
   private final List<List<?>> grid;
 
   public GameMap(Surface table, Quantity<Length> length, Quantity<Length> width) {
-    this.length = Objects.requireNonNull(length);
-    this.width = Objects.requireNonNull(width);
+    this.length = Objects.requireNonNull(length.to(MM));
+    this.width = Objects.requireNonNull(width.to(MM));
     this.table = Objects.requireNonNull(table);
 
     if (!(table.length().getValue().intValue() >= length.getValue().intValue())) {
@@ -52,8 +51,27 @@ public class GameMap {
 
     this.grid =
       Stream
-        .generate(() -> new ArrayList<>(width.to(MM).getValue().intValue()))
-        .limit(length.to(MM).getValue().intValue())
+        .generate(() -> Stream.generate(() -> null).limit(this.width.getValue().intValue()).collect(Collectors.toList())
+        )
+        .limit(this.length.getValue().intValue())
         .collect(Collectors.toList());
+  }
+
+  List<List<?>> grid() {
+    return grid;
+  }
+
+  public Surface table() {
+    return table;
+  }
+
+  @Override
+  public Quantity<Length> length() {
+    return this.length;
+  }
+
+  @Override
+  public Quantity<Length> width() {
+    return this.width;
   }
 }

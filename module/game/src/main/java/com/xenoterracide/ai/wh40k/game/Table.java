@@ -27,7 +27,7 @@ import javax.measure.Unit;
 import javax.measure.quantity.Length;
 import tech.units.indriya.unit.Units;
 
-public class Table {
+public class Table implements Surface {
 
   private static final Unit<Length> MM = MetricPrefix.MILLI(Units.METRE);
   private final Quantity<Length> length; // usually 30" / 60" / 90"
@@ -44,5 +44,19 @@ public class Table {
         .generate(() -> new ArrayList<>(width.to(MM).getValue().intValue()))
         .limit(length.to(MM).getValue().intValue())
         .collect(Collectors.toList());
+  }
+
+  public List<List<?>> grid() {
+    return this.grid;
+  }
+
+  @Override
+  public Quantity<Length> length() {
+    return this.length;
+  }
+
+  @Override
+  public Quantity<Length> width() {
+    return this.width;
   }
 }
