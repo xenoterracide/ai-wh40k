@@ -78,6 +78,10 @@ spring-data-commons = { module = "org.springframework.data:spring-data-commons" 
 spring-data-neo4j = { module = "org.springframework.data:spring-data-neo4j" }
 testcontainers = "org.testcontainers:junit-jupiter:1.+"
 tika = "org.apache.tika:tika-core:1.+"
+uom-common = "systems.uom:systems-common:2.+"
+uom-indriya = "tech.units:indriya:2.+"
+uom-quantity = "systems.uom:systems-quantity:2.+"
+uom-unit-api = "javax.measure:unit-api:2.+"
 uuid-creator = "com.github.f4b6a3:uuid-creator:3.+"
 vavr = "io.vavr:vavr:0.+"
 
@@ -88,3 +92,4 @@ jackson-config = ["jackson-core", "jackson-module-parameter-names"]
 test = ["assertj", "junit-parameters"]
 junit-platform = ["junit-engine", "junit-launcher"]
 spring-test = ["spring-test", "spring-boot-test-core", "spring-boot-autoconfigure", "spring-boot-test-autoconfigure"]
+measure = ["uom-indriya", "uom-common", "uom-unit-api"]
