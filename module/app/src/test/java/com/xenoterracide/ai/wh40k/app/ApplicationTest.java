@@ -18,10 +18,16 @@ limitations under the License.
 package com.xenoterracide.ai.wh40k.app;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.autoconfigure.web.reactive.AutoConfigureWebTestClient;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.web.reactive.server.WebTestClient;
 
 @SpringBootTest
+@AutoConfigureWebTestClient
 class ApplicationTest {
 
   @Test
-  void test() {}
+  void test(WebTestClient client) {
+    client.get().uri("/actuator/health").exchange().expectStatus().isOk();
+  }
 }
