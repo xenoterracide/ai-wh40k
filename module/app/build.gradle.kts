@@ -19,3 +19,15 @@ dependencies {
     }
   }
 }
+
+
+tasks.withType<JacocoCoverageVerification>().configureEach {
+  dependsOn(project.tasks.withType<JacocoReport>())
+  violationRules {
+    rule {
+      limit {
+        minimum = 0.3.toBigDecimal()
+      }
+    }
+  }
+}
