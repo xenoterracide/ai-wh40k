@@ -15,16 +15,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 
 */
-package com.xenoterracide.ai.wh40k.ai;
-
-import static org.assertj.core.api.Assertions.assertThat;
+package com.xenoterracide.ai.wh40k.app;
 
 import org.junit.jupiter.api.Test;
 
-class AITest {
+@SpringBootTest
+class ApplicationTest {
 
   @Test
-  void test() {
-    assertThat(new AITest()).isNotNull();
-  }
+  void test() {}
 }
