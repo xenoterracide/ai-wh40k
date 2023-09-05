@@ -4,4 +4,5 @@
 . /opt/asdf-vm/asdf.sh
 . ~/.asdf/plugins/java/set-java-home.bash
 ./gradlew spotlessApply
+git add -u
 yarn lint-staged
