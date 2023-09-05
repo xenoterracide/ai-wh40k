@@ -22,5 +22,6 @@ import javax.measure.quantity.Length;
 
 public interface Surface {
   Quantity<Length> length();
+
   Quantity<Length> width();
 }
