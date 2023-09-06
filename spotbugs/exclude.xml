@@ -11,5 +11,4 @@
             <Method name="grid" />
         </And>
     </Match>
-
 </FindBugsFilter>

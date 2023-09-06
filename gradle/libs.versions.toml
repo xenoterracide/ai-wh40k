@@ -24,6 +24,7 @@ equalsverifier = "nl.jqno.equalsverifier:equalsverifier:3.+"
 errorprone-annotations = { module = "com.google.errorprone:error_prone_annotations", version.ref = "ep" }
 errorprone-core = { module = "com.google.errorprone:error_prone_core", version.ref = "ep" }
 errorprone-nullaway = "com.uber.nullaway:nullaway:0.+"
+freebuilder = "org.inferred:freebuilder:2.+"
 immutables-core = { module = "org.immutables:value", version.ref = "immutables" }
 immutables-annotations = { module = "org.immutables:value-annotations", version.ref = "immutables" }
 jackson-annotations = { module = "com.fasterxml.jackson.core:jackson-annotations" }
