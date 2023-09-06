@@ -8,7 +8,7 @@
         <And>
             <BugPattern name="EI_EXPOSE_REP" />
             <Package name="com.xenoterracide.ai.wh40k.game" />
-            <Class name="com.xenoterracide.ai.wh40k.game.GameMap" />
+            <Method name="grid" />
         </And>
     </Match>
 
