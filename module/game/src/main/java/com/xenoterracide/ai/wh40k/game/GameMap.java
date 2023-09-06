@@ -17,6 +17,7 @@ limitations under the License.
 */
 package com.xenoterracide.ai.wh40k.game;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -57,8 +58,8 @@ public class GameMap implements Surface {
         .collect(Collectors.toList());
   }
 
-  List<List<?>> grid() {
-    return grid;
+  List<? extends List<?>> grid() {
+    return grid.stream().map(Collections::unmodifiableList).toList();
   }
 
   public Surface table() {
