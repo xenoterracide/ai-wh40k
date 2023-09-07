@@ -17,10 +17,7 @@ jobs:
         with:
           java-version: "17"
           distribution: "temurin"
-      - uses: actions/cache@v3
+      - uses: gradle/gradle-build-action@v2
         with:
-          path: |
-            ~/.gradle/caches/modules-2
-            ~/.gradle/wrapper
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          cache-disabled: true
       - run: ./gradlew build --no-build-cache --no-configuraton-cache
