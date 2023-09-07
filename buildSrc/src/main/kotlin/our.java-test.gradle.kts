@@ -1,7 +1,6 @@
 import org.gradle.accessors.dm.LibrariesForLibs
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.gradle.api.tasks.testing.logging.TestLogEvent
-import java.io.FileNotFoundException
 
 plugins {
   `java-library`
@@ -21,11 +20,9 @@ dependencies {
 }
 
 val available = tasks.register("tests available") {
-  val ss = sourceSets;
+  val java: Provider<FileCollection> = sourceSets.test.map { it.java }
   doLast {
-    ss.getByName("test") {
-      if (java.isEmpty) throw FileNotFoundException("no tests found")
-    }
+    if (java.get().isEmpty) throw RuntimeException("no tests found")
   }
 }
 
