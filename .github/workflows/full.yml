@@ -1,13 +1,13 @@
 name: Full Unoptimized Build
 on:
   push:
-    branches: ["develop"]
+    branches: ["main"]
   pull_request:
-    branches: ["develop"]
+    branches: ["main"]
   schedule:
     - cron: "0 2 * * *"
 jobs:
-  build:
+  full:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
