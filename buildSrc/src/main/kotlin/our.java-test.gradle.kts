@@ -29,7 +29,7 @@ val available = tasks.register("tests available") {
   }
 }
 
-tasks.test.configure {
+tasks.withType<Test>().configureEach {
   useJUnitPlatform()
 
   testLogging {
