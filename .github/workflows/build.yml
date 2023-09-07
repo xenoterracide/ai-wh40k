@@ -8,4 +8,6 @@ jobs:
         with:
           fetch-depth: 2
       - uses: gradle/gradle-build-action@v2
+        with:
+          cache-overwrite-existing: true
       - run: ./gradlew build
