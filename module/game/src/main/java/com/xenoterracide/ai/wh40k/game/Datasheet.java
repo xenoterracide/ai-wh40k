@@ -17,21 +17,4 @@ limitations under the License.
 */
 package com.xenoterracide.ai.wh40k.game;
 
-public class Miniature {
-
-  private final String name;
-  private final int wounds;
-  private final int toughness;
-  private final int save;
-  private final int invulnerableSave;
-  private final int movement;
-
-  public Miniature(String name, int wounds, int toughness, int save, int invulnerableSave, int movement) {
-    this.name = name;
-    this.wounds = wounds;
-    this.toughness = toughness;
-    this.save = save;
-    this.invulnerableSave = invulnerableSave;
-    this.movement = movement;
-  }
-}
+public interface Datasheet {}
