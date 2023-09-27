@@ -1,0 +1,14 @@
+name: Update Dependencies
+on: [push]
+jobs:
+  update-gradle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+      - uses: gradle/gradle-build-action@v2
+        with:
+          gradle-version: 8.0
+      - run: gradle wrapper
+      - run: ./gradlew --version
