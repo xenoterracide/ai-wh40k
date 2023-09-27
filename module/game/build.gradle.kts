@@ -1,10 +1,19 @@
 group = "com.xenoterracide"
 version = "0.1.0-SNAPSHOT"
 
-plugins {
-  id("our.java-library")
+buildscript {
+  dependencyLocking.lockAllConfigurations()
 }
 
+plugins {
+  id("our.java-library")
+  id("org.gradlex.extra-java-module-info").version("1.+")
+}
+
+extraJavaModuleInfo {
+  automaticModule("org.inferred:freebuilder", "org.inferred.freebuilder")
+  failOnMissingModuleInfo.set(false)
+}
 
 dependencies {
   annotationProcessor(libs.freebuilder)
