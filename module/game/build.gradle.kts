@@ -17,6 +17,7 @@ extraJavaModuleInfo {
 
 dependencies {
   annotationProcessor(libs.freebuilder)
+  compileOnly(libs.freebuilder)
   implementation(platform(libs.spring.platform))
   implementation(libs.bundles.measure)
   runtimeOnly(libs.spring.boot.starter.core)
