@@ -9,7 +9,7 @@ jobs:
           fetch-depth: 2
       - uses: gradle/gradle-build-action@v2
         with:
-          gradle-version: 8.0.2
+          gradle-version: current
       - run: gradle wrapper --write-locks
       - run: ./gradlew --version
       - run: ./gradlew dependencies --write-locks
