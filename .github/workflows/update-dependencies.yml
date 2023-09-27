@@ -1,7 +1,7 @@
 name: Update Dependencies
 on: [push]
 jobs:
-  update-gradle:
+  updates:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
