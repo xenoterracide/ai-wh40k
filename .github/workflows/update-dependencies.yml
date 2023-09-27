@@ -13,4 +13,5 @@ jobs:
       - run: gradle wrapper --write-locks
       - run: ./gradlew --version
       - run: ./gradlew dependencies --write-locks
+      - run: ./gradlew build --no-build-cache --no-configuration-cache
       - uses: peter-evans/create-pull-request@v5
