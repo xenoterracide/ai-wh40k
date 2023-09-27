@@ -15,3 +15,5 @@ jobs:
       - run: ./gradlew dependencies --write-locks
       - run: ./gradlew build --no-build-cache --no-configuration-cache
       - uses: peter-evans/create-pull-request@v5
+        with:
+          title: "chore: Update Dependencies"
