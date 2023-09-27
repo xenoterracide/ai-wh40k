@@ -9,6 +9,6 @@ jobs:
           fetch-depth: 2
       - uses: gradle/gradle-build-action@v2
         with:
-          gradle-version: 8.0
+          gradle-version: 8.0.2
       - run: gradle wrapper
       - run: ./gradlew --version
