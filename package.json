@@ -4,11 +4,11 @@
   "license": "Apache-2.0",
   "devDependencies": {
     "@prettier/plugin-xml": "2",
-    "husky": "^8.0.3",
-    "lint-staged": "^14.0.1",
-    "pinst": "^3.0.0",
+    "husky": "8",
+    "lint-staged": "14",
+    "pinst": "3",
     "prettier": "2",
-    "prettier-plugin-java": "^2.3.1",
+    "prettier-plugin-java": "2",
     "prettier-plugin-properties": "^0.2.0"
   },
   "scripts": {
