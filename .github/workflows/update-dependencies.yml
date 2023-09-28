@@ -1,9 +1,7 @@
 name: Update Dependencies
 on:
-  push:
-    branches: ["ccushing/auto-updates"]
   schedule:
-    - cron: "0 4 * * 4"
+    - cron: "0 3 * * 4"
 jobs:
   update-java:
     runs-on: ubuntu-latest
