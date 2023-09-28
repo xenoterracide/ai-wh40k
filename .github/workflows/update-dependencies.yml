@@ -1,9 +1,11 @@
 name: Update Dependencies
 on:
+  push:
+    branches: ["ccushing/auto-updates"]
   schedule:
     - cron: "0 4 * * 4"
 jobs:
-  updates:
+  update-java:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -18,4 +20,19 @@ jobs:
       - run: ./gradlew build --no-build-cache
       - uses: peter-evans/create-pull-request@v5
         with:
-          title: "chore: Update Dependencies"
+          title: "chore: Update Java Dependencies"
+  update-node:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+      - uses: actions/setup-node@v3
+      - run: corepack enable
+      - run: yarn set version stable
+      - run: yarn up
+      - run: yarn up -R
+      - run: yarn dedupe
+      - uses: peter-evans/create-pull-request@v5
+        with:
+          title: "chore: Update Node Dependencies"
