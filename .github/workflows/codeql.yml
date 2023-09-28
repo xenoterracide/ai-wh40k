@@ -19,8 +19,6 @@ on:
   workflow_call:
 jobs:
   analyze:
-    needs:
-      - build
     runs-on: ubuntu-latest
     permissions:
       actions: read
