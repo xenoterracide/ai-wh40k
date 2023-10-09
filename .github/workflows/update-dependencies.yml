@@ -1,7 +1,7 @@
 name: Update Dependencies
 on:
   schedule:
-    - cron: "0 10 * * 25"
+    - cron: "0 10 * * 30"
 jobs:
   update-java:
     runs-on: ubuntu-latest
