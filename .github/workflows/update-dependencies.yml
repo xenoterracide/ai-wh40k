@@ -27,7 +27,7 @@ jobs:
           title: "chore: Update Java Dependencies"
           branch: topic/update-java
           token: ${{ secrets.PAT }}
-      - run: gh pr merge --auto --squash ${{ env.GITHUB_REF_NAME }}
+      - run: gh pr merge --auto --squash ${{ env.PULL_REQUEST_NUMBER }}
         env:
           GH_TOKEN: ${{ secrets.PAT }}
   update-node:
@@ -47,6 +47,6 @@ jobs:
           title: "chore: Update Node Dependencies"
           branch: topic/update-node
           token: ${{ secrets.PAT }}
-      - run: gh pr merge --auto --squash ${{ env.GITHUB_REF_NAME }}
+      - run: gh pr merge --auto --squash ${{ env.PULL_REQUEST_NUMBER }}
         env:
           GH_TOKEN: ${{ secrets.PAT }}
