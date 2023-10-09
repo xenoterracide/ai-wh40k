@@ -1,7 +1,7 @@
 name: Update Dependencies
 on:
   schedule:
-    - cron: "0 3 * * 4"
+    - cron: "0 10 * * 25"
 jobs:
   update-java:
     runs-on: ubuntu-latest
@@ -16,10 +16,14 @@ jobs:
       - run: ./gradlew --version
       - run: ./gradlew dependencies --write-locks
       - run: ./gradlew build --no-build-cache
+      - run: gh pr merge --merge --auto "1"
+        env:
+          GH_TOKEN: ${{ secrets.PAT }}
       - uses: peter-evans/create-pull-request@v5
         with:
           title: "chore: Update Java Dependencies"
           branch: topic/update-java
+          token: ${{ secrets.PAT }}
   update-node:
     runs-on: ubuntu-latest
     steps:
@@ -32,7 +36,11 @@ jobs:
       - run: yarn up
       - run: yarn up -R
       - run: yarn dedupe
+      - run: gh pr merge --merge --auto "1"
+        env:
+          GH_TOKEN: ${{ secrets.PAT }}
       - uses: peter-evans/create-pull-request@v5
         with:
           title: "chore: Update Node Dependencies"
           branch: topic/update-node
+          token: ${{ secrets.PAT }}
