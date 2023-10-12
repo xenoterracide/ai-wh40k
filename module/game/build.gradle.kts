@@ -13,6 +13,9 @@ dependencies {
   runtimeOnly(libs.spring.boot.starter.log4j2)
   constraints {
     implementation(libs.javax.annotation) {
+      version {
+        strictly("1.3.4")
+      }
       because("need the 1.0 api")
     }
   }
