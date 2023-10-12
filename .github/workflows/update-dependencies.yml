@@ -28,6 +28,7 @@ jobs:
           branch: topic/update-java
           token: ${{ secrets.PAT }}
       - run: gh pr merge --auto --squash ${{ env.PULL_REQUEST_NUMBER }}
+        if: ${{ env.PULL_REQUEST_NUMBER == '' }}
         env:
           GH_TOKEN: ${{ secrets.PAT }}
   update-node:
@@ -48,5 +49,6 @@ jobs:
           branch: topic/update-node
           token: ${{ secrets.PAT }}
       - run: gh pr merge --auto --squash ${{ env.PULL_REQUEST_NUMBER }}
+        if: ${{ env.PULL_REQUEST_NUMBER == '' }}
         env:
           GH_TOKEN: ${{ secrets.PAT }}
