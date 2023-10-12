@@ -21,7 +21,6 @@ jobs:
       - run: gradle wrapper --write-locks
       - run: ./gradlew --version
       - run: ./gradlew dependencies --write-locks
-
       - uses: peter-evans/create-pull-request@v5
         with:
           title: "chore: Update Java Dependencies"
