@@ -4,7 +4,7 @@ immutables = "2.+"
 checker = "3.+"
 picocli = "4.+"
 deeplearning4j = "1.+"
-spring = "2.+"
+spring = "3.+"
 
 [libraries]
 api-guardian = { module = "org.apiguardian:apiguardian-api" }
