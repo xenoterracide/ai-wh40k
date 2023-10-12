@@ -8,8 +8,8 @@ spring = "3.+"
 
 [libraries]
 api-guardian = { module = "org.apiguardian:apiguardian-api" }
-assertj = "org.assertj:assertj-core:3+"
-checker-annotations = { module = "org.checkerframework:chekcker-qual", version.ref = "checker" }
+assertj = { module = "org.assertj:assertj-core" }
+checker-annotations = { module = "org.checkerframework:checker-qual", version.ref = "checker" }
 checker-core = { module = "org.checkerframework:checker", version.ref = "checker" }
 checkstyle = "com.puppycrawl.tools:checkstyle:8.+"
 commons-io = "commons-io:commons-io:2.+"
