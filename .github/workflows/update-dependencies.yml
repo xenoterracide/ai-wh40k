@@ -20,6 +20,7 @@ jobs:
           gradle-version: current
       - run: gradle wrapper --write-locks
       - run: ./gradlew --version
+      - run: find . -name '*gradle.lockfile' -delete
       - run: ./gradlew dependencies --write-locks
       - uses: peter-evans/create-pull-request@v5
         with:
