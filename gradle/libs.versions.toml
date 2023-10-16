@@ -11,7 +11,7 @@ api-guardian = { module = "org.apiguardian:apiguardian-api" }
 assertj = { module = "org.assertj:assertj-core" }
 checker-annotations = { module = "org.checkerframework:checker-qual", version.ref = "checker" }
 checker-core = { module = "org.checkerframework:checker", version.ref = "checker" }
-checkstyle = "com.puppycrawl.tools:checkstyle:8.+"
+checkstyle = "com.puppycrawl.tools:checkstyle:10.+"
 commons-io = "commons-io:commons-io:2.+"
 commons-lang = { module = "org.apache.commons:commons-lang3" }
 deeplearning4j-core = { module = "org.deeplearning4j:deeplearning4j-core", version.ref = "deeplearning4j" }
