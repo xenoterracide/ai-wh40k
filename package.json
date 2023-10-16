@@ -3,7 +3,7 @@
   "private": true,
   "license": "Apache-2.0",
   "devDependencies": {
-    "@prettier/plugin-xml": "2",
+    "@prettier/plugin-xml": "3",
     "husky": "8",
     "lint-staged": "15",
     "pinst": "3",
