@@ -15,7 +15,7 @@ checkstyle = "com.puppycrawl.tools:checkstyle:8.+"
 commons-io = "commons-io:commons-io:2.+"
 commons-lang = { module = "org.apache.commons:commons-lang3" }
 deeplearning4j-core = { module = "org.deeplearning4j:deeplearning4j-core", version.ref = "deeplearning4j" }
-dgs-platform = "com.netflix.graphql.dgs:graphql-dgs-platform-dependencies:4.+"
+dgs-platform = "com.netflix.graphql.dgs:graphql-dgs-platform-dependencies:7.+"
 dgs-starter = { module = "com.netflix.graphql.dgs:graphql-dgs-spring-boot-starter" }
 equalsverifier = "nl.jqno.equalsverifier:equalsverifier:3.+"
 errorprone-annotations = { module = "com.google.errorprone:error_prone_annotations", version.ref = "ep" }
