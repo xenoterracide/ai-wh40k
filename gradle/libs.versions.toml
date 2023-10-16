@@ -9,8 +9,6 @@ spring = "3.+"
 [libraries]
 api-guardian = { module = "org.apiguardian:apiguardian-api" }
 assertj = { module = "org.assertj:assertj-core" }
-autoservice = "com.google.auto.service:auto-service:1.+"
-bndlib = "biz.aQute.bnd:bndlib:2.+"
 checker-annotations = { module = "org.checkerframework:checker-qual", version.ref = "checker" }
 checker-core = { module = "org.checkerframework:checker", version.ref = "checker" }
 checkstyle = "com.puppycrawl.tools:checkstyle:[8,)"
@@ -39,6 +37,7 @@ junit-launcher = { module = "org.junit.platform:junit-platform-launcher" }
 log4j-api = { module = "org.apache.logging.log4j:log4j-api" }
 mockito = { module = "org.mockito:mockito-core" }
 nd4j-native = { module = "org.nd4j:nd4j-native", version.ref = "deeplearning4j" }
+neo4j-driver = { module = "org.neo4j.driver:neo4j-java-driver" }
 picocli-core = { module = "info.picocli:picocli", version.ref = "picocli" }
 picocli-starter = { module = "info.picocli:picocli-spring-boot-starter", version.ref = "picocli" }
 plugin-errorprone = "net.ltgt.gradle:gradle-errorprone-plugin:3.+"
@@ -74,7 +73,6 @@ uom-common = "systems.uom:systems-common:2.+"
 uom-indriya = "tech.units:indriya:2.+"
 uom-quantity = "systems.uom:systems-quantity:2.+"
 uom-unit-api = "javax.measure:unit-api:2.+"
-uuid-creator = "com.github.f4b6a3:uuid-creator:3.+"
 vavr = "io.vavr:vavr:0.+"
 
 [bundles]
