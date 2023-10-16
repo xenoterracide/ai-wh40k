@@ -29,7 +29,7 @@ class GameMapTest {
   @Test
   void gridSize() {
     var map = new GameMap(
-      new Table(Quantities.getQuantity(6 * 12, Imperial.INCH), Quantities.getQuantity(6 * 12, Imperial.INCH)),
+      GameTable.create(Quantities.getQuantity(6 * 12, Imperial.INCH), Quantities.getQuantity(6 * 12, Imperial.INCH)),
       Quantities.getQuantity(44, Imperial.INCH),
       Quantities.getQuantity(30, Imperial.INCH)
     );

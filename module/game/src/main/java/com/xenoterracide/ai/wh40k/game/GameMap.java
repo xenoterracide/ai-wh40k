@@ -28,16 +28,16 @@ import javax.measure.Unit;
 import javax.measure.quantity.Length;
 import tech.units.indriya.unit.Units;
 
-public class GameMap implements Surface {
+public class GameMap implements GameSurface {
 
   private static final Unit<Length> MM = MetricPrefix.MILLI(Units.METRE);
-  private final Surface table;
+  private final GameSurface table;
   private final Quantity<Length> length; // usually 30" / 60" / 90"
   private final Quantity<Length> width; // usually 44"
 
   private final List<List<?>> grid;
 
-  public GameMap(Surface table, Quantity<Length> length, Quantity<Length> width) {
+  public GameMap(GameSurface table, Quantity<Length> length, Quantity<Length> width) {
     this.length = Objects.requireNonNull(length.to(MM));
     this.width = Objects.requireNonNull(width.to(MM));
     this.table = Objects.requireNonNull(table);
@@ -62,7 +62,7 @@ public class GameMap implements Surface {
     return grid.stream().map(Collections::unmodifiableList).toList();
   }
 
-  public Surface table() {
+  public GameSurface table() {
     return table;
   }
 
@@ -75,4 +75,11 @@ public class GameMap implements Surface {
   public Quantity<Length> width() {
     return this.width;
   }
+
+  // CHECKSTYLE:OFF
+  // mitigate finalizer attack
+  @Override
+  @SuppressWarnings({ "deprecation", "Finalize" })
+  protected final void finalize() {}
+  // CHECKSTYLE:ON
 }
