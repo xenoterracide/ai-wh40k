@@ -1,5 +1,6 @@
 name: Update Dependencies
 on:
+  pull_request:
   schedule:
     #         ┌───────────── minute (0 - 59)
     #         │ ┌───────────── hour (0 - 23)
