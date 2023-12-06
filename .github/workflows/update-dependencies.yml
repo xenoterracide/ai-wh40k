@@ -7,7 +7,7 @@ on:
     #         │ │ │ ┌───────────── month (1 - 12 or JAN-DEC)
     #         │ │ │ │ ┌───────────── day of the week (0 - 6 or SUN-SAT)
     #         * * * * *
-    - cron: "0 4 * * 3" # 4am every Wednesday
+    - cron: "0 4 * * *" # 4am every Wednesday
 jobs:
   update-java:
     runs-on: ubuntu-latest
@@ -18,10 +18,10 @@ jobs:
       - uses: gradle/gradle-build-action@v2
         with:
           gradle-version: current
-          arguments: wrapper
-      - run: find . -name '*gradle.lockfile' -delete
-      - run: gradle wrapper --write-locks
+          arguments: wrapper --write-locks
       - run: ./gradlew --version
+      - run: find . -name '*gradle.lockfile' -delete
+      - run: ./gradle wrapper --write-locks
       - run: ./gradlew dependencies --write-locks
       - uses: peter-evans/create-pull-request@v5
         with:
