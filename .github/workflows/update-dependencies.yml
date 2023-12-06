@@ -19,7 +19,7 @@ jobs:
       - uses: gradle/gradle-build-action@v2
         with:
           gradle-version: current
-          arguments: wrapper
+          arguments: wrapper --write-locks
       - run: find . -name '*gradle.lockfile' -delete
       - run: gradle wrapper --write-locks
       - run: ./gradlew --version
