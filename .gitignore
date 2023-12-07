@@ -1,6 +1,6 @@
 foo/
 bar/
-application-dev.properties
+application-local-developer.*
 
 # for yarn
 .yarn/*
