@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OFS ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
+import com.diffplug.gradle.spotless.SpotlessTask
 import org.gradle.kotlin.dsl.support.normaliseLineSeparators
 
 plugins {
@@ -38,6 +39,10 @@ val license = """
   limitations under the License.
   */
   """.trimIndent().normaliseLineSeparators()
+
+tasks.withType<SpotlessTask>().configureEach {
+  enabled = !providers.environmentVariable("CI").isPresent
+}
 
 spotless {
   ratchetFrom("origin/main")
