@@ -31,12 +31,12 @@ spotless {
   java {
     licenseHeader(license)
   }
-  /*
-  kotlinGradle {
-    target("*.gradle.kts")
-    licenseHeader(license, "//")
-    ktlint() // or ktfmt() or prettier()
-  }
-
-   */
 }
+/*
+  kotlinGradle {
+    target("**\/*.gradle.kts")
+    licenseHeader(license, "//")
+    ktfmt()
+  }
+}
+*/
