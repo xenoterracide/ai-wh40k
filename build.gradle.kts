@@ -1,3 +1,3 @@
 tasks.dependencies {
-  dependsOn(subprojects.map { it.tasks.dependencies })
+  dependsOn(subprojects.map { "${it.path}:dependencies" })
 }
