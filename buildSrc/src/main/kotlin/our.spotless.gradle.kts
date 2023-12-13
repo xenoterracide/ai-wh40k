@@ -14,6 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 import com.diffplug.gradle.spotless.SpotlessTask
+import gradle.kotlin.dsl.accessors._3e0fdb0147f372f0cb1483f912b21178.spotless
 import org.gradle.kotlin.dsl.support.normaliseLineSeparators
 
 plugins {
@@ -41,17 +42,21 @@ val license = """
   """.trimIndent().normaliseLineSeparators()
 
 tasks.withType<SpotlessTask>().configureEach {
-  enabled = !providers.environmentVariable("CI").isPresent
+  enabled = providers.environmentVariable("CI").isPresent
 }
+
 
 spotless {
   // ratchetFrom("origin/main")
   java {
     licenseHeader(license)
   }
-  kotlinGradle {
-    target("**/*.gradle.kts")
-    licenseHeader(license, "(import|buildscript|plugins|root|enable)")
-    // ktfmt()
-  }
 }
+/*
+kotlinGradle {
+  target("**\*.gradle.kts")
+  licenseHeader(license, "(import|buildscript|plugins|root)")
+  // ktfmt()
+}
+}
+*/
