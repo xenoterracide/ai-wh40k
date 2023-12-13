@@ -18,8 +18,9 @@ equalsverifier = "nl.jqno.equalsverifier:equalsverifier:3.+"
 errorprone-annotations = { module = "com.google.errorprone:error_prone_annotations", version.ref = "ep" }
 errorprone-core = { module = "com.google.errorprone:error_prone_core", version.ref = "ep" }
 errorprone-nullaway = "com.uber.nullaway:nullaway:0.+"
-immutables-core = { module = "org.immutables:value", version.ref = "immutables" }
-immutables-annotations = { module = "org.immutables:value-annotations", version.ref = "immutables" }
+immutables-bom = "org.immutables:bom:2+"
+immutables-annotations = { module = "org.immutables:value-annotations" }
+immutables-core = { module = "org.immutables:value" }
 jackson-annotations = { module = "com.fasterxml.jackson.core:jackson-annotations" }
 jackson-core = { module = "com.fasterxml.jackson.core:jackson-core" }
 jackson-databind = { module = "com.fasterxml.jackson.core:jackson-databind" }
