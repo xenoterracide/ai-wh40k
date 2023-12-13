@@ -6,12 +6,7 @@ plugins {
 }
 
 val copyright = "Copyright © \$YEAR Caleb Cushing."
-
-spotless {
-  ratchetFrom("origin/main")
-  java {
-    licenseHeader(
-      """
+val license = """
       /*
 
       $copyright
@@ -28,8 +23,20 @@ spotless {
       See the License for the specific language governing permissions and
       limitations under the License.
 
-      */
+      /*
       """.trimIndent().normaliseLineSeparators()
-    )
+
+spotless {
+  ratchetFrom("origin/main")
+  java {
+    licenseHeader(license)
   }
+  /*
+  kotlinGradle {
+    target("*.gradle.kts")
+    licenseHeader(license, "//")
+    ktlint() // or ktfmt() or prettier()
+  }
+
+   */
 }
