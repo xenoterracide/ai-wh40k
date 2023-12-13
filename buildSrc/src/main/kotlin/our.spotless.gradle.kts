@@ -45,13 +45,13 @@ tasks.withType<SpotlessTask>().configureEach {
 }
 
 spotless {
-  ratchetFrom("origin/main")
+  // ratchetFrom("origin/main")
   java {
     licenseHeader(license)
   }
   kotlinGradle {
     target("**/*.gradle.kts")
-    licenseHeader(license, "^(import|buildscript|plugins)")
+    licenseHeader(license, "(import|buildscript|plugins|root|enable)")
     // ktfmt()
   }
 }
