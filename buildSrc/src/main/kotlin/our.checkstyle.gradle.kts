@@ -7,10 +7,6 @@ plugins {
 
 val libs = the<LibrariesForLibs>()
 
-dependencies {
-  checkstyle(libs.checkstyle)
-}
-
 tasks.withType<Checkstyle>().configureEach {
   isShowViolations = true
   reports {

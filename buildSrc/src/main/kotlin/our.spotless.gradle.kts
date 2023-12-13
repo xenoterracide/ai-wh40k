@@ -1,4 +1,3 @@
-import com.diffplug.gradle.spotless.SpotlessTask
 import org.gradle.kotlin.dsl.support.normaliseLineSeparators
 
 plugins {
@@ -8,11 +7,8 @@ plugins {
 
 val copyright = "Copyright © \$YEAR Caleb Cushing."
 
-tasks.withType<SpotlessTask>().configureEach {
-  enabled = !providers.environmentVariable("CI").isPresent
-}
-
 spotless {
+  ratchetFrom("origin/main")
   java {
     licenseHeader(
       """
