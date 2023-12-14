@@ -16,7 +16,6 @@ limitations under the License.
 import com.diffplug.gradle.spotless.SpotlessCheck
 import com.diffplug.gradle.spotless.SpotlessTask
 import com.diffplug.gradle.spotless.SpotlessTaskImpl
-import gradle.kotlin.dsl.accessors._3e0fdb0147f372f0cb1483f912b21178.spotless
 import org.gradle.kotlin.dsl.support.normaliseLineSeparators
 
 plugins {
@@ -66,3 +65,11 @@ spotless {
     // ktfmt()
   }
 }
+/*
+kotlinGradle {
+  target("**\*.gradle.kts")
+  licenseHeader(license, "(import|buildscript|plugins|root)")
+  // ktfmt()
+}
+}
+*/
