@@ -42,12 +42,12 @@ val license = """
   """.trimIndent().normaliseLineSeparators()
 
 tasks.withType<SpotlessCheck>().configureEach {
-  enabled = providers.environmentVariable("CI").isPresent
+  enabled = !providers.environmentVariable("CI").isPresent
 }
 
 
 spotless {
-  // ratchetFrom("origin/main")
+  ratchetFrom("origin/main")
   java {
     licenseHeader(license)
   }
