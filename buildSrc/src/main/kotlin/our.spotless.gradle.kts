@@ -13,7 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OFS ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-import com.diffplug.gradle.spotless.SpotlessTask
+import com.diffplug.gradle.spotless.SpotlessCheck
 import gradle.kotlin.dsl.accessors._3e0fdb0147f372f0cb1483f912b21178.spotless
 import org.gradle.kotlin.dsl.support.normaliseLineSeparators
 
@@ -41,7 +41,7 @@ val license = """
   */
   """.trimIndent().normaliseLineSeparators()
 
-tasks.withType<SpotlessTask>().configureEach {
+tasks.withType<SpotlessCheck>().configureEach {
   enabled = providers.environmentVariable("CI").isPresent
 }
 
@@ -51,12 +51,12 @@ spotless {
   java {
     licenseHeader(license)
   }
+
+
+  kotlinGradle {
+    target("**/*.gradle.kts")
+    targetExclude("**/build/**")
+    licenseHeader(license, "(import|buildscript|plugins|root)")
+    // ktfmt()
+  }
 }
-/*
-kotlinGradle {
-  target("**\*.gradle.kts")
-  licenseHeader(license, "(import|buildscript|plugins|root)")
-  // ktfmt()
-}
-}
-*/
