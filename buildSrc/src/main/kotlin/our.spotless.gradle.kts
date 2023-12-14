@@ -14,6 +14,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 import com.diffplug.gradle.spotless.SpotlessCheck
+import com.diffplug.gradle.spotless.SpotlessTask
+import com.diffplug.gradle.spotless.SpotlessTaskImpl
 import gradle.kotlin.dsl.accessors._3e0fdb0147f372f0cb1483f912b21178.spotless
 import org.gradle.kotlin.dsl.support.normaliseLineSeparators
 
@@ -41,8 +43,12 @@ val license = """
   */
   """.trimIndent().normaliseLineSeparators()
 
-tasks.withType<SpotlessCheck>().configureEach {
-  enabled = !providers.environmentVariable("CI").isPresent
+if (providers.environmentVariable("CI").isPresent) {
+  listOf(SpotlessTask::class, SpotlessCheck::class, SpotlessTaskImpl::class).forEach {
+    tasks.withType(it).configureEach {
+      enabled = false
+    }
+  }
 }
 
 
