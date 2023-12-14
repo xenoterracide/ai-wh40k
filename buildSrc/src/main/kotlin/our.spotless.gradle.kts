@@ -53,7 +53,7 @@ if (providers.environmentVariable("CI").isPresent) {
 
 
 spotless {
-  ratchetFrom("origin/main")
+  // ratchetFrom("origin/main")
   java {
     licenseHeader(license)
   }
