@@ -11,7 +11,6 @@ api-guardian = { module = "org.apiguardian:apiguardian-api" }
 assertj = { module = "org.assertj:assertj-core" }
 checker-annotations = { module = "org.checkerframework:checker-qual", version.ref = "checker" }
 checker-core = { module = "org.checkerframework:checker", version.ref = "checker" }
-checkstyle = "com.puppycrawl.tools:checkstyle:[8,)"
 commons-io = "commons-io:commons-io:2.+"
 commons-lang = { module = "org.apache.commons:commons-lang3" }
 deeplearning4j-core = { module = "org.deeplearning4j:deeplearning4j-core", version.ref = "deeplearning4j" }
@@ -47,7 +46,7 @@ plugin-spotbugs = "com.github.spotbugs.snom:spotbugs-gradle-plugin:5.+"
 plugin-spotless = "com.diffplug.spotless:spotless-plugin-gradle:6.+"
 slf4j-nop = { module = "org.slf4j:slf4j-nop" }
 spotbugs = "com.github.spotbugs:spotbugs:4.+"
-spring-platform = { module = "org.springframework.boot:spring-boot-starter-parent", version.ref="spring" }
+spring-platform = { module = "org.springframework.boot:spring-boot-starter-parent", version.ref = "spring" }
 spring-context = { module = "org.springframework:spring-context" }
 spring-core = { module = "org.springframework:spring-core" }
 spring-beans = { module = "org.springframework:spring-beans" }
