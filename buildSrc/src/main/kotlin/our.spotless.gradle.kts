@@ -47,7 +47,7 @@ tasks.withType<SpotlessCheck>().configureEach {
 
 
 spotless {
-  ratchetFrom("origin/main")
+  // ratchetFrom("origin/main")
   java {
     licenseHeader(license)
   }
