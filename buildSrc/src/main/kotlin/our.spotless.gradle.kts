@@ -65,11 +65,3 @@ spotless {
     // ktfmt()
   }
 }
-/*
-kotlinGradle {
-  target("**\*.gradle.kts")
-  licenseHeader(license, "(import|buildscript|plugins|root)")
-  // ktfmt()
-}
-}
-*/
