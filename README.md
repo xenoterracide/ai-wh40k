@@ -5,6 +5,8 @@
 - Java 17+
 - NodeJs
 
+add a way to export these to your `PATH` in your `~/.profile`
+
 ## Build Tools
 
 - [Gradle](https://docs.gradle.org/current/userguide/command_line_interface.html)
