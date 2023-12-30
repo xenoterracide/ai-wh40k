@@ -15,8 +15,8 @@ limitations under the License.
 */
 buildscript.dependencyLocking.lockAllConfigurations()
 plugins {
-  libs.plugins.dependency.analysis
   our.spotless
+  alias(libs.plugins.dependency.analysis)
 }
 
 group = "com.xenoterracide"
