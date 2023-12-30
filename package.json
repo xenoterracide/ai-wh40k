@@ -15,5 +15,8 @@
     "postinstall": "husky install",
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable"
+  },
+  "dependencies": {
+    "@prettier/plugin-xml": "^3.2.2"
   }
 }
