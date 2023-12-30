@@ -19,6 +19,8 @@ plugins {
   alias(libs.plugins.dependency.analysis)
 }
 
+dependencyLocking.lockAllConfigurations()
+
 group = "com.xenoterracide"
 version = "0.1.0-SNAPSHOT"
 
