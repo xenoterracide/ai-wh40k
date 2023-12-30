@@ -22,8 +22,8 @@ plugins {
 dependencies {
   implementation(platform(libs.spring.platform))
   implementation(libs.bundles.measure)
-  runtimeOnly(libs.spring.boot.starter.core)
-  runtimeOnly(libs.spring.boot.starter.log4j2)
+  runtimeOnly(libs.starter.core)
+  runtimeOnly(libs.starter.log4j2)
   constraints {
     implementation(libs.javax.annotation) {
       version {

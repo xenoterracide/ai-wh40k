@@ -19,13 +19,26 @@ plugins {
 }
 
 dependencies {
+  runtimeOnly(platform(libs.spring.platform))
+  runtimeOnly(libs.starter.core)
+  runtimeOnly(libs.starter.log4j2)
+  runtimeOnly(libs.starter.webflux)
+  runtimeOnly(libs.starter.actuator)
+
+
+  api(platform(libs.spring.platform))
+  api(libs.spring.boot.autoconfigure)
+
   implementation(platform(libs.spring.platform))
   implementation(libs.spring.boot.autoconfigure)
+  implementation(libs.spring.boot.core)
+  implementation(libs.spring.context)
+
+  testImplementation(platform(libs.spring.platform))
   testImplementation(libs.bundles.spring.test)
-  runtimeOnly(libs.spring.boot.starter.core)
-  runtimeOnly(libs.spring.boot.starter.log4j2)
-  runtimeOnly(libs.spring.boot.starter.webflux)
-  runtimeOnly(libs.spring.boot.starter.actuator)
+  testImplementation(libs.junit.api)
+  testImplementation(libs.spring.beans)
+
   modules {
     module("org.springframework.boot:spring-boot-starter-logging") {
       replacedBy(
