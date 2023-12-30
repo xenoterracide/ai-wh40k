@@ -5,4 +5,4 @@
 
 ./gradlew spotlessApply
 git add -u
-yarn lint-staged
+npx lint-staged

@@ -13,21 +13,40 @@ WITHOUT WARRANTIES OR CONDITIONS OFS ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
+buildscript {
+  dependencyLocking.lockAllConfigurations()
+}
 plugins {
-  id("our.java-library")
+  our.javalibrary
 }
 
 dependencies {
+  runtimeOnly(platform(libs.spring.platform))
+  runtimeOnly(libs.starter.core)
+  runtimeOnly(libs.starter.log4j2)
+  runtimeOnly(libs.starter.webflux)
+  runtimeOnly(libs.starter.actuator)
+
+
+  api(platform(libs.spring.platform))
+  api(libs.spring.boot.autoconfigure)
+
   implementation(platform(libs.spring.platform))
   implementation(libs.spring.boot.autoconfigure)
+  implementation(libs.spring.boot.core)
+  implementation(libs.spring.context)
+
+  testImplementation(platform(libs.spring.platform))
   testImplementation(libs.bundles.spring.test)
-  runtimeOnly(libs.spring.boot.starter.core)
-  runtimeOnly(libs.spring.boot.starter.log4j2)
-  runtimeOnly(libs.spring.boot.starter.webflux)
-  runtimeOnly(libs.spring.boot.starter.actuator)
+  testImplementation(libs.junit.api)
+  testImplementation(libs.spring.beans)
+
   modules {
     module("org.springframework.boot:spring-boot-starter-logging") {
-      replacedBy("org.springframework.boot:spring-boot-starter-log4j2", "Use Log4j2 instead of Logback")
+      replacedBy(
+        "org.springframework.boot:spring-boot-starter-log4j2",
+        "Use Log4j2 instead of Logback"
+      )
     }
   }
 }
