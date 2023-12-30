@@ -13,7 +13,9 @@ WITHOUT WARRANTIES OR CONDITIONS OFS ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-buildscript.dependencyLocking.lockAllConfigurations()
+buildscript {
+  dependencyLocking.lockAllConfigurations()
+}
 plugins {
   our.javalibrary
 }
