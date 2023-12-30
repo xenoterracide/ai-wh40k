@@ -1,5 +1,7 @@
 # Contributing
 
+## Languages
+
 [asdf](https://asdf-vm.com) is suggested, you can use whatever you'd like to get
 
 - Java 17+
@@ -15,6 +17,12 @@ add a way to export these to your `PATH` in your `~/.profile`
 Run `npm ci && ./gradlew dependencies` to install dependencies.
 
 ## Committing
+
+Install Hooks
+
+```sh
+git config core.hooksPath .config/git/hooks
+```
 
 Use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
