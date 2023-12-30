@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OFS ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
+buildscript.dependencyLocking.lockAllConfigurations()
 plugins {
   id("our.java-library")
 }
@@ -27,7 +28,10 @@ dependencies {
   runtimeOnly(libs.spring.boot.starter.actuator)
   modules {
     module("org.springframework.boot:spring-boot-starter-logging") {
-      replacedBy("org.springframework.boot:spring-boot-starter-log4j2", "Use Log4j2 instead of Logback")
+      replacedBy(
+        "org.springframework.boot:spring-boot-starter-log4j2",
+        "Use Log4j2 instead of Logback"
+      )
     }
   }
 }

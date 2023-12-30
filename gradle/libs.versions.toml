@@ -83,3 +83,6 @@ test = ["assertj", "junit-parameters"]
 junit-platform = ["junit-engine", "junit-launcher"]
 spring-test = ["spring-test", "spring-boot-test-core", "spring-boot-autoconfigure", "spring-boot-test-autoconfigure"]
 measure = ["uom-indriya", "uom-common", "uom-quantity", "uom-unit-api"]
+
+[plugins]
+dependency-analysis = { id = "com.autonomousapps.dependency-analysis", version = "1.+" }

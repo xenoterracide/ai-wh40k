@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OFS ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
+buildscript.dependencyLocking.lockAllConfigurations()
 plugins {
   `kotlin-dsl`
 }
@@ -21,9 +22,7 @@ repositories {
   gradlePluginPortal()
 }
 
-dependencyLocking {
-  lockAllConfigurations()
-}
+dependencyLocking.lockAllConfigurations()
 
 dependencies {
   implementation(files(libs.javaClass.superclass.protectionDomain.codeSource.location))
