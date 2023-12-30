@@ -15,7 +15,7 @@ limitations under the License.
 */
 buildscript.dependencyLocking.lockAllConfigurations()
 plugins {
-  id("our.java-library")
+  our.javalibrary
 }
 
 
