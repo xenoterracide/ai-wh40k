@@ -15,8 +15,8 @@ limitations under the License.
 */
 buildscript.dependencyLocking.lockAllConfigurations()
 plugins {
-  our.spotless
   libs.plugins.dependency.analysis
+  our.spotless
 }
 
 group = "com.xenoterracide"
@@ -24,4 +24,8 @@ version = "0.1.0-SNAPSHOT"
 
 tasks.dependencies {
   dependsOn(subprojects.map { "${it.path}:dependencies" })
+}
+
+tasks.register("plugins") {
+  project.plugins.forEach { println(it) }
 }
