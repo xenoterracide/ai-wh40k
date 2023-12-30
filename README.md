@@ -18,12 +18,6 @@ Run `npm ci && ./gradlew dependencies` to install dependencies.
 
 ## Committing
 
-Install Hooks
-
-```sh
-git config core.hooksPath .config/git/hooks
-```
-
 Use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
 # License
