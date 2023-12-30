@@ -8,7 +8,7 @@
 ## Build Tools
 
 - [Gradle](https://docs.gradle.org/current/userguide/command_line_interface.html)
-- NPM.
+- [NPM](https://docs.npmjs.com/about-npm)
 
 Run `npm ci && ./gradlew dependencies` to install dependencies.
 

@@ -1,2 +1,2 @@
 #!/bin/sh
-git-conventional-commits commit-msg-hook "$1"
+npx git-conventional-commits commit-msg-hook "$1"
