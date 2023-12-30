@@ -1,6 +1,20 @@
-# Build tools
+# Contributing
 
-We use [Gradle](https://docs.gradle.org/current/userguide/command_line_interface.html) but our commit hooks use [Yarn](https://yarnpkg.com/getting-started/usage). Run `yarn && ./gradlew dependencies` to install dependencies.
+[asdf](https://asdf-vm.com) is suggested, you can use whatever you'd like to get
+
+- Java 17+
+- NodeJs
+
+## Build Tools
+
+- [Gradle](https://docs.gradle.org/current/userguide/command_line_interface.html)
+- NPM.
+
+Run `npm ci && ./gradlew dependencies` to install dependencies.
+
+## Committing
+
+Use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
 # License
 
