@@ -5,9 +5,9 @@ plugins {
   id("com.diffplug.spotless")
 }
 
-val copyright = "// Copyright © \$YEAR Caleb Cushing.${System.lineSeparator()}"
-val javaLicense = "// SPDX-License-Identifier: Apache-2.0${System.lineSeparator()}"
-val gradleLicense = "// SPDX-License-Identifier: MIT${System.lineSeparator()}"
+val copyright = "// Copyright © \$YEAR Caleb Cushing.\n"
+val javaLicense = "// SPDX-License-Identifier: Apache-2.0\n"
+val gradleLicense = "// SPDX-License-Identifier: MIT\n"
 
 repositories {
   mavenCentral()
