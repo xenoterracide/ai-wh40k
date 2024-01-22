@@ -19,7 +19,7 @@ spotless {
   }
 
   java {
-    licenseHeader("$javaLicense$copyright")
+    licenseHeader(javaLicense + copyright)
     removeUnusedImports()
     formatAnnotations()
     cleanthat()
