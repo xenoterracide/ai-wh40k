@@ -4,7 +4,7 @@
 
 [asdf](https://asdf-vm.com) is suggested, you can use whatever you'd like to get
 
-- Java 17+
+- Java 21+
 - NodeJs
 
 add a way to export these to your `PATH` in your `~/.profile`
