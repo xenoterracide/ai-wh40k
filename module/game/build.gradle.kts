@@ -1,11 +1,8 @@
 // SPDX-License-Identifier: MIT
 // Copyright © 2023-2024 Caleb Cushing.
-buildscript {
-  dependencyLocking.lockAllConfigurations()
-}
-plugins {
-  our.javalibrary
-}
+buildscript { dependencyLocking.lockAllConfigurations() }
+
+plugins { our.javalibrary }
 
 dependencies {
   implementation(platform(libs.spring.platform))
@@ -14,9 +11,7 @@ dependencies {
   runtimeOnly(libs.starter.log4j2)
   constraints {
     implementation(libs.javax.annotation) {
-      version {
-        strictly("1.3.4")
-      }
+      version { strictly("1.3.4") }
       because("need the 1.0 api")
     }
   }
