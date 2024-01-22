@@ -1,6 +1,5 @@
 [versions]
 ep = "2.+"
-immutables = "2.+"
 checker = "3.+"
 picocli = "4.+"
 deeplearning4j = "1.+"
@@ -18,6 +17,7 @@ equalsverifier = "nl.jqno.equalsverifier:equalsverifier:3.+"
 errorprone-annotations = { module = "com.google.errorprone:error_prone_annotations", version.ref = "ep" }
 errorprone-core = { module = "com.google.errorprone:error_prone_core", version.ref = "ep" }
 errorprone-nullaway = "com.uber.nullaway:nullaway:0.+"
+google-java-format = "com.google.googlejavaformat:google-java-format:+"
 immutables-bom = "org.immutables:bom:2+"
 immutables-annotations = { module = "org.immutables:value-annotations" }
 immutables-core = { module = "org.immutables:value" }
@@ -34,6 +34,7 @@ junit-bom = "org.junit:junit-bom:5.+"
 junit-parameters = { module = "org.junit.jupiter:junit-jupiter-params" }
 junit-engine = { module = "org.junit.jupiter:junit-jupiter-engine" }
 junit-launcher = { module = "org.junit.platform:junit-platform-launcher" }
+ktlint = "com.pinterest.ktlint:ktlint-cli:+"
 log4j-api = { module = "org.apache.logging.log4j:log4j-api" }
 mockito = { module = "org.mockito:mockito-core" }
 nd4j-native = { module = "org.nd4j:nd4j-native", version.ref = "deeplearning4j" }
@@ -47,7 +48,7 @@ plugin-spotless = "com.diffplug.spotless:spotless-plugin-gradle:6.+"
 slf4j-nop = { module = "org.slf4j:slf4j-nop" }
 spotbugs = "com.github.spotbugs:spotbugs:4.+"
 spring-platform = { module = "org.springframework.boot:spring-boot-dependencies", version.ref = "spring" }
-spring-boot-core = { module = "org.springframework.boot:spring-boot"}
+spring-boot-core = { module = "org.springframework.boot:spring-boot" }
 spring-boot-autoconfigure = { module = "org.springframework.boot:spring-boot-autoconfigure" }
 spring-boot-test-core = { module = "org.springframework.boot:spring-boot-test" }
 spring-boot-test-autoconfigure = { module = "org.springframework.boot:spring-boot-test-autoconfigure" }
