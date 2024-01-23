@@ -9,10 +9,6 @@ val copyright = "// Copyright © \$YEAR Caleb Cushing.\n"
 val javaLicense = "// SPDX-License-Identifier: Apache-2.0\n"
 val gradleLicense = "// SPDX-License-Identifier: MIT\n"
 
-repositories {
-  mavenCentral()
-}
-
 spotless {
   if (!providers.environmentVariable("CI").isPresent) {
     ratchetFrom("origin/main")

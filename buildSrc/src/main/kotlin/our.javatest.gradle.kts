@@ -9,9 +9,6 @@ plugins {
   `java-test-fixtures`
 }
 
-repositories {
-  mavenCentral()
-}
 val libs = the<LibrariesForLibs>()
 
 dependencies {
@@ -36,7 +33,14 @@ tasks.withType<Test>().configureEach {
       showStandardStreams = true
       displayGranularity = 2
       exceptionFormat = TestExceptionFormat.FULL
-      events.addAll(listOf(TestLogEvent.STARTED, TestLogEvent.PASSED, TestLogEvent.SKIPPED, TestLogEvent.FAILED))
+      events.addAll(
+        listOf(
+          TestLogEvent.STARTED,
+          TestLogEvent.PASSED,
+          TestLogEvent.SKIPPED,
+          TestLogEvent.FAILED,
+        ),
+      )
     }
   }
   reports {
