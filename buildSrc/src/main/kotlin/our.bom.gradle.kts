@@ -12,9 +12,6 @@ dependencyLocking {
   lockAllConfigurations()
 }
 
-repositories {
-  mavenCentral()
-}
 val libs = the<LibrariesForLibs>()
 
 configurations.configureEach {
