@@ -7,11 +7,6 @@ plugins {
   `kotlin-dsl`
 }
 
-repositories {
-  gradlePluginPortal()
-  mavenCentral()
-}
-
 dependencyLocking.lockAllConfigurations()
 
 dependencies {
