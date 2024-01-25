@@ -1,4 +1,4 @@
-name: Update Dependencies
+name: Update Node
 on:
   schedule:
     #         ┌───────────── minute (0 - 59)
@@ -9,29 +9,6 @@ on:
     #         * * * * *
     - cron: "0 4 * * *" # 4am every Wednesday
 jobs:
-  update-java:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 2
-      - uses: gradle/gradle-build-action@v2
-        with:
-          gradle-version: current
-          arguments: wrapper --write-locks
-      - run: ./gradlew --version
-      - run: find . -name '*gradle.lockfile' -delete
-      - run: ./gradlew wrapper --write-locks
-      - run: ./gradlew build buildHealth --write-locks
-      - uses: peter-evans/create-pull-request@v5
-        with:
-          title: "chore: Update Java Dependencies"
-          branch: topic/update-java
-          token: ${{ secrets.PAT }}
-      - run: gh pr merge --auto --squash ${{ env.PULL_REQUEST_NUMBER }}
-        if: ${{ env.PULL_REQUEST_NUMBER != '' }}
-        env:
-          GH_TOKEN: ${{ secrets.PAT }}
   update-node:
     runs-on: ubuntu-latest
     steps:
